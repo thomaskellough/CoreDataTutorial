@@ -8,7 +8,16 @@
 
 import Foundation
 
-enum Entity: String {
-    case shoutOut = "ShoutOut"
-    case employee = "Employee"
+enum Entity {
+    case shoutOut
+    case employee
+    
+    var name: String {
+        switch self {
+        case .shoutOut:
+            return "ShoutOut"
+        case .employee:
+            return "Employee"
+        }
+    }
 }
