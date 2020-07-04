@@ -22,11 +22,24 @@ class ShoutOutEditorViewController: UIViewController, ManagedObjectContextDepend
     ]
     
     var employees: [Employee]!
+    var shoutOut: ShoutOut!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
         fetchEmployees()
+        
+        let shoutOutsFetchRequest = NSFetchRequest<ShoutOut>(entityName: Entity.shoutOut.name)
+        do {
+            let shoutOuts = try self.managedObjectContext.fetch(shoutOutsFetchRequest)
+            print(shoutOuts)
+            for shoutOut in shoutOuts {
+                print(shoutOut.from)
+                print(shoutOut.shoutCategory)
+                print(shoutOut.message)
+                print("\(shoutOut.toEmployee.firstName) \(shoutOut.toEmployee.lastName)")
+            }
+        } catch _ {}
         
         self.toEmployeePicker.dataSource = self
         self.toEmployeePicker.delegate = self
@@ -35,6 +48,9 @@ class ShoutOutEditorViewController: UIViewController, ManagedObjectContextDepend
         self.shoutCategoryPicker.dataSource = self
         self.shoutCategoryPicker.delegate = self
         self.shoutCategoryPicker.tag = 1
+        
+        self.shoutOut = NSEntityDescription.insertNewObject(forEntityName: Entity.shoutOut.name, into: self.managedObjectContext) as? ShoutOut
+        
         
 		messageTextView.layer.borderWidth = CGFloat(0.5)
         messageTextView.layer.borderColor = UIColor(red: 204/255, green: 204/255, blue: 204/255, alpha: 1).cgColor
@@ -58,11 +74,33 @@ class ShoutOutEditorViewController: UIViewController, ManagedObjectContextDepend
     }
 
 	@IBAction func cancelButtonTapped(_ sender: UIBarButtonItem) {
+        self.managedObjectContext.rollback()
 		self.dismiss(animated: true, completion: nil)
 	}
 	
 	@IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
-		self.dismiss(animated: true, completion: nil)
+        let selectedEmployeeIndex = self.toEmployeePicker.selectedRow(inComponent: 0)
+        let selectedEmployee = self.employees[selectedEmployeeIndex]
+        self.shoutOut.toEmployee = selectedEmployee
+        
+        let selectedShoutCategoryIndex = self.shoutCategoryPicker.selectedRow(inComponent: 0)
+        let selectedShoutCategory = self.shoutCategories[selectedShoutCategoryIndex]
+        self.shoutOut.shoutCategory = selectedShoutCategory
+        
+        self.shoutOut.message = self.messageTextView.text
+        self.shoutOut.from = self.fromTextField.text ?? "Anonymous"
+        
+        do {
+            try self.managedObjectContext.save()
+            self.dismiss(animated: true, completion: nil)
+        } catch {
+            let ac = UIAlertController(title: "Trouble Saving", message: "Something with wrong with trying to save the data", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction) -> Void in
+                self.managedObjectContext.rollback()
+                self.shoutOut = NSEntityDescription.insertNewObject(forEntityName: Entity.shoutOut.name, into: self.managedObjectContext) as? ShoutOut
+            }))
+            self.present(ac, animated: true)
+        }
 	}
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
