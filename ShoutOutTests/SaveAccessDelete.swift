@@ -11,13 +11,21 @@ import XCTest
 
 @testable import ShoutOut
 class SaveAccessDelete: XCTestCase {
+    
+    var managedObjectContext: NSManagedObjectContext!
+    var dataService: DataService!
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        self.managedObjectContext = createMainContextInMemory()
+        self.dataService = DataService(managedObjectContext: managedObjectContext)
+        self.dataService.seedEmployees()
     }
 
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+        self.managedObjectContext = nil
+        self.dataService = nil
     }
 
     func testExample() throws {
@@ -33,10 +41,6 @@ class SaveAccessDelete: XCTestCase {
     }
     
     func testFetchAllEmployes() {
-        let managedObjectContext = createMainContextInMemory()
-        let dataService = DataService(managedObjectContext: managedObjectContext)
-        dataService.seedEmployees()
-        
         let employeeFetchRequest = NSFetchRequest<Employee>(entityName: "\(Entity.employee.name)")
         
         do {
@@ -48,21 +52,38 @@ class SaveAccessDelete: XCTestCase {
     }
     
     func testFilterShoutouts() {
-        let managedObjectContext = createMainContextInMemory()
-        let dataService = DataService(managedObjectContext: managedObjectContext)
-        dataService.seedEmployees()
-        
         seedShoutOutForTesting(managedObjectContext: managedObjectContext)
         let shoutOutsFetchRequest = NSFetchRequest<ShoutOut>(entityName: Entity.shoutOut.name)
         
         let shoutCategoryEqualityPredicate = NSPredicate(format: "%K == %@", #keyPath(ShoutOut.shoutCategory), "Awesome work!")
         shoutOutsFetchRequest.predicate = shoutCategoryEqualityPredicate
-        
         do {
             let filterdShoutOuts = try managedObjectContext.fetch(shoutOutsFetchRequest)
+            print("\n=========== Filtered by Awesome Work! ===========")
             printShoutOuts(shoutOuts: filterdShoutOuts)
         } catch {
-            print("Something went wrong fetching ShoutOuts: \(error)")
+            print("Something went wrong with fetching ShoutOuts: \(error)")
+        }
+        
+        
+        let shoutCategoryInPredicate = NSPredicate(format: "%K IN %@", #keyPath(ShoutOut.shoutCategory), "Very cool!, Excellent!")
+        shoutOutsFetchRequest.predicate = shoutCategoryInPredicate
+        do {
+            let filterdShoutOuts = try managedObjectContext.fetch(shoutOutsFetchRequest)
+            print("\n=========== Filtered by Very Cool! and Excellent! ===========")
+            printShoutOuts(shoutOuts: filterdShoutOuts)
+        } catch {
+            print("Somethign went wrong with fetching ShoutOuts: \(error)")
+        }
+        
+        let shoutCategoryBeginsWithPredicate = NSPredicate(format: "%K BEGINSWITH %@", #keyPath(ShoutOut.toEmployee.lastName), "Sn")
+        shoutOutsFetchRequest.predicate = shoutCategoryBeginsWithPredicate
+        do {
+            let filterdShoutOuts = try managedObjectContext.fetch(shoutOutsFetchRequest)
+            print("\n=========== Filtered by Begins With 'Sn'! ===========")
+            printShoutOuts(shoutOuts: filterdShoutOuts)
+        } catch {
+            print("Somethign went wrong with fetching ShoutOuts: \(error)")
         }
     }
     
