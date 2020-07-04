@@ -29,18 +29,6 @@ class ShoutOutEditorViewController: UIViewController, ManagedObjectContextDepend
 		
         fetchEmployees()
         
-        let shoutOutsFetchRequest = NSFetchRequest<ShoutOut>(entityName: Entity.shoutOut.name)
-        do {
-            let shoutOuts = try self.managedObjectContext.fetch(shoutOutsFetchRequest)
-            print(shoutOuts)
-            for shoutOut in shoutOuts {
-                print(shoutOut.from)
-                print(shoutOut.shoutCategory)
-                print(shoutOut.message)
-                print("\(shoutOut.toEmployee.firstName) \(shoutOut.toEmployee.lastName)")
-            }
-        } catch _ {}
-        
         self.toEmployeePicker.dataSource = self
         self.toEmployeePicker.delegate = self
         self.toEmployeePicker.tag = 0
