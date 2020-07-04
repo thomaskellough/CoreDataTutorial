@@ -205,7 +205,11 @@ Just thought this deserved a shout out. Great work, Jane!
                                 <rect key="frame" x="4" y="813" width="406" height="49"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="8Xf-id-FMe"/>
-                                    <barButtonItem systemItem="trash" id="VX3-Ya-Bta"/>
+                                    <barButtonItem systemItem="trash" id="VX3-Ya-Bta">
+                                        <connections>
+                                            <action selector="deleteButtonTapped:" destination="Sgy-Bp-bSa" id="FZi-mF-cPb"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem systemItem="action" id="4yV-Sh-3YW"/>
                                 </items>
                             </toolbar>
