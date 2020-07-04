@@ -7,24 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BC2AF78524AE58BA00502B98 /* ShoutOut.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BC2AF78324AE58BA00502B98 /* ShoutOut.xcdatamodeld */; };
 		BC2AF78724AE58E400502B98 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2AF78624AE58E400502B98 /* CoreDataStack.swift */; };
-		BC2AF78A24AE5E9700502B98 /* URLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2AF78924AE5E9700502B98 /* URLExtensions.swift */; };
-		BCAE168724AEAFCA0017C485 /* ManagedObjectContextDependentProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE168624AEAFCA0017C485 /* ManagedObjectContextDependentProtocol.swift */; };
-		BCAE168D24AEC6770017C485 /* ShoutOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE168C24AEC6770017C485 /* ShoutOut.swift */; };
-		BCAE168F24AFEB010017C485 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE168E24AFEB010017C485 /* Employee.swift */; };
-		BCAE169224B0CEB20017C485 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE169124B0CEB20017C485 /* DataService.swift */; };
+		BC8881BF24B0F5B500746D92 /* ManagedObjectContextDependentProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8881BE24B0F5B500746D92 /* ManagedObjectContextDependentProtocol.swift */; };
+		BC8881C124B0F5C200746D92 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8881C024B0F5C200746D92 /* DataService.swift */; };
+		BC8881C324B0F5E400746D92 /* URLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8881C224B0F5E400746D92 /* URLExtensions.swift */; };
+		BC8881C724B0F61400746D92 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8881C424B0F61400746D92 /* Employee.swift */; };
+		BC8881C824B0F61400746D92 /* EntityEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8881C524B0F61400746D92 /* EntityEnums.swift */; };
+		BC8881C924B0F61400746D92 /* ShoutOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8881C624B0F61400746D92 /* ShoutOut.swift */; };
+		BC8881CD24B0F66700746D92 /* ShoutOutDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8881CA24B0F66700746D92 /* ShoutOutDetailsViewController.swift */; };
+		BC8881CE24B0F66700746D92 /* ShoutOutEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8881CB24B0F66700746D92 /* ShoutOutEditorViewController.swift */; };
+		BC8881CF24B0F66700746D92 /* ShoutOutDraftsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8881CC24B0F66700746D92 /* ShoutOutDraftsViewController.swift */; };
+		BC8881D224B0F68F00746D92 /* ShoutOut.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BC8881D024B0F68F00746D92 /* ShoutOut.xcdatamodeld */; };
 		BCAE169424B0D16B0017C485 /* SaveAccessDelete.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE169324B0D16B0017C485 /* SaveAccessDelete.swift */; };
-		BCAE169624B0D2CC0017C485 /* EntityEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE169524B0D2CC0017C485 /* EntityEnums.swift */; };
-		BCAE169724B0D3170017C485 /* EntityEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE169524B0D2CC0017C485 /* EntityEnums.swift */; };
 		F2530B671D985E400029B14E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2530B661D985E400029B14E /* AppDelegate.swift */; };
 		F2530B6C1D985E400029B14E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2530B6A1D985E400029B14E /* Main.storyboard */; };
 		F2530B6E1D985E400029B14E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2530B6D1D985E400029B14E /* Assets.xcassets */; };
 		F2530B711D985E400029B14E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2530B6F1D985E400029B14E /* LaunchScreen.storyboard */; };
 		F2530B7C1D985E410029B14E /* ShoutOutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2530B7B1D985E410029B14E /* ShoutOutTests.swift */; };
-		F2530B8C1D9861E40029B14E /* ShoutOutDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2530B891D9861E40029B14E /* ShoutOutDetailsViewController.swift */; };
-		F2530B8D1D9861E40029B14E /* ShoutOutDraftsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2530B8A1D9861E40029B14E /* ShoutOutDraftsViewController.swift */; };
-		F2530B8E1D9861E40029B14E /* ShoutOutEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2530B8B1D9861E40029B14E /* ShoutOutEditorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,15 +37,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BC2AF78424AE58BA00502B98 /* ShoutOut.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShoutOut.xcdatamodel; sourceTree = "<group>"; };
 		BC2AF78624AE58E400502B98 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
-		BC2AF78924AE5E9700502B98 /* URLExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtensions.swift; sourceTree = "<group>"; };
-		BCAE168624AEAFCA0017C485 /* ManagedObjectContextDependentProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedObjectContextDependentProtocol.swift; sourceTree = "<group>"; };
-		BCAE168C24AEC6770017C485 /* ShoutOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoutOut.swift; sourceTree = "<group>"; };
-		BCAE168E24AFEB010017C485 /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
-		BCAE169124B0CEB20017C485 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		BC8881BE24B0F5B500746D92 /* ManagedObjectContextDependentProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ManagedObjectContextDependentProtocol.swift; path = Protocols/ManagedObjectContextDependentProtocol.swift; sourceTree = "<group>"; };
+		BC8881C024B0F5C200746D92 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataService.swift; path = Services/DataService.swift; sourceTree = "<group>"; };
+		BC8881C224B0F5E400746D92 /* URLExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URLExtensions.swift; path = Extensions/URLExtensions.swift; sourceTree = "<group>"; };
+		BC8881C424B0F61400746D92 /* Employee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Employee.swift; path = Models/Employee.swift; sourceTree = "<group>"; };
+		BC8881C524B0F61400746D92 /* EntityEnums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EntityEnums.swift; path = Models/EntityEnums.swift; sourceTree = "<group>"; };
+		BC8881C624B0F61400746D92 /* ShoutOut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShoutOut.swift; path = Models/ShoutOut.swift; sourceTree = "<group>"; };
+		BC8881CA24B0F66700746D92 /* ShoutOutDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShoutOutDetailsViewController.swift; path = "View Controllers/ShoutOutDetailsViewController.swift"; sourceTree = "<group>"; };
+		BC8881CB24B0F66700746D92 /* ShoutOutEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShoutOutEditorViewController.swift; path = "View Controllers/ShoutOutEditorViewController.swift"; sourceTree = "<group>"; };
+		BC8881CC24B0F66700746D92 /* ShoutOutDraftsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShoutOutDraftsViewController.swift; path = "View Controllers/ShoutOutDraftsViewController.swift"; sourceTree = "<group>"; };
+		BC8881D124B0F68F00746D92 /* ShoutOut.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShoutOut.xcdatamodel; sourceTree = "<group>"; };
 		BCAE169324B0D16B0017C485 /* SaveAccessDelete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveAccessDelete.swift; sourceTree = "<group>"; };
-		BCAE169524B0D2CC0017C485 /* EntityEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityEnums.swift; sourceTree = "<group>"; };
 		F2530B631D985E400029B14E /* ShoutOut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoutOut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2530B661D985E400029B14E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2530B6B1D985E400029B14E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -56,9 +58,6 @@
 		F2530B771D985E410029B14E /* ShoutOutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShoutOutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2530B7B1D985E410029B14E /* ShoutOutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoutOutTests.swift; sourceTree = "<group>"; };
 		F2530B7D1D985E410029B14E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F2530B891D9861E40029B14E /* ShoutOutDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoutOutDetailsViewController.swift; sourceTree = "<group>"; };
-		F2530B8A1D9861E40029B14E /* ShoutOutDraftsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoutOutDraftsViewController.swift; sourceTree = "<group>"; };
-		F2530B8B1D9861E40029B14E /* ShoutOutEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoutOutEditorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +81,7 @@
 		BC2AF78824AE5E8B00502B98 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				BC2AF78924AE5E9700502B98 /* URLExtensions.swift */,
+				BC8881C224B0F5E400746D92 /* URLExtensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -90,7 +89,7 @@
 		BCAE168524AEAFB50017C485 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				BCAE168624AEAFCA0017C485 /* ManagedObjectContextDependentProtocol.swift */,
+				BC8881BE24B0F5B500746D92 /* ManagedObjectContextDependentProtocol.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -98,7 +97,7 @@
 		BCAE169024B0CEA30017C485 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				BCAE169124B0CEB20017C485 /* DataService.swift */,
+				BC8881C024B0F5C200746D92 /* DataService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -149,9 +148,9 @@
 		F2530B861D985E670029B14E /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F2530B8A1D9861E40029B14E /* ShoutOutDraftsViewController.swift */,
-				F2530B891D9861E40029B14E /* ShoutOutDetailsViewController.swift */,
-				F2530B8B1D9861E40029B14E /* ShoutOutEditorViewController.swift */,
+				BC8881CA24B0F66700746D92 /* ShoutOutDetailsViewController.swift */,
+				BC8881CC24B0F66700746D92 /* ShoutOutDraftsViewController.swift */,
+				BC8881CB24B0F66700746D92 /* ShoutOutEditorViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -159,10 +158,10 @@
 		F2530B871D985E7F0029B14E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				BC2AF78324AE58BA00502B98 /* ShoutOut.xcdatamodeld */,
-				BCAE168C24AEC6770017C485 /* ShoutOut.swift */,
-				BCAE168E24AFEB010017C485 /* Employee.swift */,
-				BCAE169524B0D2CC0017C485 /* EntityEnums.swift */,
+				BC8881D024B0F68F00746D92 /* ShoutOut.xcdatamodeld */,
+				BC8881C424B0F61400746D92 /* Employee.swift */,
+				BC8881C524B0F61400746D92 /* EntityEnums.swift */,
+				BC8881C624B0F61400746D92 /* ShoutOut.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -284,18 +283,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BCAE168724AEAFCA0017C485 /* ManagedObjectContextDependentProtocol.swift in Sources */,
-				BCAE169624B0D2CC0017C485 /* EntityEnums.swift in Sources */,
-				BC2AF78A24AE5E9700502B98 /* URLExtensions.swift in Sources */,
-				BC2AF78524AE58BA00502B98 /* ShoutOut.xcdatamodeld in Sources */,
-				BCAE168F24AFEB010017C485 /* Employee.swift in Sources */,
-				BCAE168D24AEC6770017C485 /* ShoutOut.swift in Sources */,
-				BCAE169224B0CEB20017C485 /* DataService.swift in Sources */,
-				F2530B8C1D9861E40029B14E /* ShoutOutDetailsViewController.swift in Sources */,
+				BC8881D224B0F68F00746D92 /* ShoutOut.xcdatamodeld in Sources */,
+				BC8881C924B0F61400746D92 /* ShoutOut.swift in Sources */,
+				BC8881C324B0F5E400746D92 /* URLExtensions.swift in Sources */,
+				BC8881C124B0F5C200746D92 /* DataService.swift in Sources */,
+				BC8881C724B0F61400746D92 /* Employee.swift in Sources */,
+				BC8881C824B0F61400746D92 /* EntityEnums.swift in Sources */,
+				BC8881CD24B0F66700746D92 /* ShoutOutDetailsViewController.swift in Sources */,
+				BC8881CE24B0F66700746D92 /* ShoutOutEditorViewController.swift in Sources */,
 				F2530B671D985E400029B14E /* AppDelegate.swift in Sources */,
+				BC8881BF24B0F5B500746D92 /* ManagedObjectContextDependentProtocol.swift in Sources */,
 				BC2AF78724AE58E400502B98 /* CoreDataStack.swift in Sources */,
-				F2530B8E1D9861E40029B14E /* ShoutOutEditorViewController.swift in Sources */,
-				F2530B8D1D9861E40029B14E /* ShoutOutDraftsViewController.swift in Sources */,
+				BC8881CF24B0F66700746D92 /* ShoutOutDraftsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,7 +303,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2530B7C1D985E410029B14E /* ShoutOutTests.swift in Sources */,
-				BCAE169724B0D3170017C485 /* EntityEnums.swift in Sources */,
 				BCAE169424B0D16B0017C485 /* SaveAccessDelete.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -521,13 +519,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		BC2AF78324AE58BA00502B98 /* ShoutOut.xcdatamodeld */ = {
+		BC8881D024B0F68F00746D92 /* ShoutOut.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				BC2AF78424AE58BA00502B98 /* ShoutOut.xcdatamodel */,
+				BC8881D124B0F68F00746D92 /* ShoutOut.xcdatamodel */,
 			);
-			currentVersion = BC2AF78424AE58BA00502B98 /* ShoutOut.xcdatamodel */;
-			path = ShoutOut.xcdatamodeld;
+			currentVersion = BC8881D124B0F68F00746D92 /* ShoutOut.xcdatamodel */;
+			name = ShoutOut.xcdatamodeld;
+			path = Models/ShoutOut.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
