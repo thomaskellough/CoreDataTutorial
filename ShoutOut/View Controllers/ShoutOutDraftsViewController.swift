@@ -5,7 +5,7 @@
 import CoreData
 import UIKit
 
-class ShoutOutDraftsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ManagedObjectContextDependentType {
+class ShoutOutDraftsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ManagedObjectContextDependentType, NSFetchedResultsControllerDelegate {
 
 	@IBOutlet weak var tableView: UITableView!
     
@@ -33,6 +33,8 @@ class ShoutOutDraftsViewController: UIViewController, UITableViewDataSource, UIT
         shoutOutFetchRequest.sortDescriptors = [lastNameSortDescriptor, firstNameSortDescriptor]
         
         self.fetchedResultsController = NSFetchedResultsController<ShoutOut>(fetchRequest: shoutOutFetchRequest, managedObjectContext: self.managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+        
+        self.fetchedResultsController.delegate = self
     }
 	
 	// MARK: TableView Data Source methods
@@ -67,6 +69,45 @@ class ShoutOutDraftsViewController: UIViewController, UITableViewDataSource, UIT
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		tableView.deselectRow(at: indexPath, animated: true)
 	}
+    
+    // MARK: NSFetchedResultsController Delegate Methods
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        self.tableView.beginUpdates()
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        self.tableView.endUpdates()
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch type {
+        case .insert:
+            if let insertIndexPath = newIndexPath {
+                self.tableView.insertRows(at: [insertIndexPath], with: .fade)
+            }
+        case .delete:
+            if let deleteIndexPath = newIndexPath {
+                self.tableView.deleteRows(at: [deleteIndexPath], with: .fade)
+            }
+        case .update:
+            if let updateIndexPath = newIndexPath {
+                let cell = self.tableView.cellForRow(at: updateIndexPath)
+                let updatedShoutOut = self.fetchedResultsController.object(at: updateIndexPath)
+                
+                cell?.textLabel?.text = "\(updatedShoutOut.toEmployee.firstName) \(updatedShoutOut.toEmployee.lastName)"
+                cell?.detailTextLabel?.text = updatedShoutOut.shoutCategory
+            }
+        case .move:
+            if let deleteIndexPath = newIndexPath {
+                self.tableView.deleteRows(at: [deleteIndexPath], with: .fade)
+            }
+            if let insertIndexPath = newIndexPath {
+                self.tableView.insertRows(at: [insertIndexPath], with: .fade)
+            }
+        @unknown default:
+            fatalError("Unknown type handled: \(type)")
+        }
+    }
 	
 	// MARK: - Navigation
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
