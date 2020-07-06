@@ -12,6 +12,7 @@ import Foundation
 class Employee: NSManagedObject {
     @NSManaged var firstName: String
     @NSManaged var lastName: String
+    @NSManaged var department: String
     
     @NSManaged var shoutOuts: NSSet?
 }

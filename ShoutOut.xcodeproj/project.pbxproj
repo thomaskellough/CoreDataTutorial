@@ -19,6 +19,7 @@
 		BC8881CF24B0F66700746D92 /* ShoutOutDraftsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8881CC24B0F66700746D92 /* ShoutOutDraftsViewController.swift */; };
 		BC8881D224B0F68F00746D92 /* ShoutOut.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BC8881D024B0F68F00746D92 /* ShoutOut.xcdatamodeld */; };
 		BCAE169424B0D16B0017C485 /* SaveAccessDelete.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE169324B0D16B0017C485 /* SaveAccessDelete.swift */; };
+		BCD364BB24B27C91007639DC /* OSLogExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD364BA24B27C91007639DC /* OSLogExtensions.swift */; };
 		F2530B671D985E400029B14E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2530B661D985E400029B14E /* AppDelegate.swift */; };
 		F2530B6C1D985E400029B14E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2530B6A1D985E400029B14E /* Main.storyboard */; };
 		F2530B6E1D985E400029B14E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2530B6D1D985E400029B14E /* Assets.xcassets */; };
@@ -49,6 +50,8 @@
 		BC8881CC24B0F66700746D92 /* ShoutOutDraftsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShoutOutDraftsViewController.swift; path = "View Controllers/ShoutOutDraftsViewController.swift"; sourceTree = "<group>"; };
 		BC8881D124B0F68F00746D92 /* ShoutOut.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShoutOut.xcdatamodel; sourceTree = "<group>"; };
 		BCAE169324B0D16B0017C485 /* SaveAccessDelete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveAccessDelete.swift; sourceTree = "<group>"; };
+		BCD364B924B277FB007639DC /* ShoutOut 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "ShoutOut 2.xcdatamodel"; sourceTree = "<group>"; };
+		BCD364BA24B27C91007639DC /* OSLogExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSLogExtensions.swift; sourceTree = "<group>"; };
 		F2530B631D985E400029B14E /* ShoutOut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoutOut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2530B661D985E400029B14E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2530B6B1D985E400029B14E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -82,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				BC8881C224B0F5E400746D92 /* URLExtensions.swift */,
+				BCD364BA24B27C91007639DC /* OSLogExtensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -293,6 +297,7 @@
 				BC8881CE24B0F66700746D92 /* ShoutOutEditorViewController.swift in Sources */,
 				F2530B671D985E400029B14E /* AppDelegate.swift in Sources */,
 				BC8881BF24B0F5B500746D92 /* ManagedObjectContextDependentProtocol.swift in Sources */,
+				BCD364BB24B27C91007639DC /* OSLogExtensions.swift in Sources */,
 				BC2AF78724AE58E400502B98 /* CoreDataStack.swift in Sources */,
 				BC8881CF24B0F66700746D92 /* ShoutOutDraftsViewController.swift in Sources */,
 			);
@@ -377,7 +382,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -421,7 +426,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -522,9 +527,10 @@
 		BC8881D024B0F68F00746D92 /* ShoutOut.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				BCD364B924B277FB007639DC /* ShoutOut 2.xcdatamodel */,
 				BC8881D124B0F68F00746D92 /* ShoutOut.xcdatamodel */,
 			);
-			currentVersion = BC8881D124B0F68F00746D92 /* ShoutOut.xcdatamodel */;
+			currentVersion = BCD364B924B277FB007639DC /* ShoutOut 2.xcdatamodel */;
 			name = ShoutOut.xcdatamodeld;
 			path = Models/ShoutOut.xcdatamodeld;
 			sourceTree = "<group>";
